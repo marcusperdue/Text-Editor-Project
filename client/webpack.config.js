@@ -20,7 +20,7 @@ module.exports = () => {
     plugins: [
       // added HtmlWebpackPlugin
       new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: './index.html',
       }),
       // added WebpackPwaManifest
       new WebpackPwaManifest({
@@ -30,7 +30,7 @@ module.exports = () => {
         background_color: '#ffffff',
         icons: [
           {
-            src: path.resolve('src/assets/icon.png'),
+            src: path.resolve('./src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('icons'),
           },
@@ -38,8 +38,8 @@ module.exports = () => {
       }),
       // added InjectManifest
       new InjectManifest({
-        swSrc: './src/service-worker.js',  
-        swDest: 'service-worker.js',  
+        swSrc: './src-sw.js',  
+        swDest: 'src-sw.js',  
       }),
       
     ],
